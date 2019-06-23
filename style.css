@@ -4,6 +4,22 @@ header{
   height:100%;
 }
 
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: url(mona-eendra-208388-unsplash.jpg);
+  
+}
+
+h2 {
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url(mona-eendra-208388-unsplash.jpg);
+
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -29,7 +45,7 @@ header{
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: rgb(131, 164, 179)
+  background-color: rgb(131, 164, 179);
   color: white;
 }
 
