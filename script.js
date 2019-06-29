@@ -24,30 +24,37 @@
 //validation
 var wantsBees = prompt('Would you like to make an order at the Bee Store? Please type yes or no.');
 
+var beeList = [];
+
 while (wantsBees !== "yes" && wantsBees !== "no") {
   wantsBees = prompt("Oops, you made an invalid entry. Please type yes or no. Would you like to make an order today?");
+  
 }
 
 if (wantsBees === 'yes') {
   var numberBeehives = prompt('How many beehives would you like?');
-
+  
   for (numberBeehives; numberBeehives > 0; numberBeehives--) {
-    var hiveType = prompt('Would you like an 8-frame hive or a 10-frame hive?');
-    var freeHoney = prompt('Would you like a jar of complimentary wildflower honey with your hive?');
+    //prompt hives and honey
+    var newOrder = {};
+    newOrder.hiveType = prompt('Would you like an 8-frame hive or a 10-frame hive?');
+    newOrder.honey = prompt('Would you like a jar of complimentary wildflower honey with your hive?');
 
     //hand that info to
-    var html = createInvoice(numberBeehives, hiveType, freeHoney);
+    newOrder.html = createInvoice(newOrder.hiveType, newOrder.honey);
     //take the html and give it to document.write
-    document.write(html);
+    beeList.push(newOrder);
+    document.write(newOrder.html);
   }
- } else {
+ } 
+ 
+ else {
   document.write(' Ok, enjoy our site and feel free to purchase at the Bee Store anytime!');
   alert("Feel free to order a hive in the future!");
   }
 
-
-function createInvoice(numberBeehives, hiveType, freeHoney) {
- var html = '<p>Order # '+ numberBeehives + ': one ' + hiveType + ' hive and ' + freeHoney + ' to honey.</p>';
+function createInvoice(hiveType, freeHoney) {
+ var html = '<p>Order # : one ' + hiveType + ' hive and ' + freeHoney + ' to honey.</p>';
  return html;
 }
 
